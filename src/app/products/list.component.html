@@ -1,0 +1,23 @@
+﻿<h1>Products</h1>
+<a routerLink="add" class="btn btn-sm btn-success mb-2">Add Product</a>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th style="width: 33%">Name</th>
+            <th style="width: 54%">Description</th>
+            <th style="width: 13%">Price</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let product of products">
+            <td>{{product.name}}</td>
+            <td>{{product.description}}</td>
+            <td>{{product.price}}</td>
+        </tr>
+        <tr *ngIf="!products">
+            <td colspan="4" class="text-center">
+                <span class="spinner-border spinner-border-lg align-center"></span>
+            </td>
+        </tr>
+    </tbody>
+</table>
